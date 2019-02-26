@@ -6,7 +6,6 @@ if ! zgen saved; then
 
   # specify plugins here
   zgen oh-my-zsh
-  zgen oh-my-zsh plugins/ansible
   zgen oh-my-zsh plugins/colored-man-pages
   zgen oh-my-zsh plugins/colorize
   zgen oh-my-zsh plugins/extract
