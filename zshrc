@@ -11,10 +11,10 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/extract
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/jump
-  zgen oh-my-zsh plugins/per-directory-history
   zgen oh-my-zsh plugins/rsync
   zgen oh-my-zsh plugins/systemadmin
   zgen oh-my-zsh plugins/z
+  zgen load      robbyrussell/oh-my-zsh/plugins/per-directory-history per-directory-history.zsh
 
   # personnal configuration
   zgen load hybris42/zsh hybris.zsh
