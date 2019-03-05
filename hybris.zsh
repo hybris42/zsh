@@ -1,5 +1,10 @@
 # bip at command end
-function precmd() {echo -n -e "\a"}
+function precmd() {
+  echo -n -e "\a"
+  if [ $_per_directory_history_is_global = false ]; then
+    echo "\e[31mUsing local history\e[39m"
+  fi
+}
 
 # do not share history between terms...
 unsetopt share_history
