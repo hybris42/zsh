@@ -14,7 +14,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/rsync
   zgen oh-my-zsh plugins/systemadmin
   zgen oh-my-zsh plugins/z
-  zgen load      robbyrussell/oh-my-zsh/plugins/per-directory-history per-directory-history.zsh
+  zgen load      robbyrussell/oh-my-zsh plugins/per-directory-history/per-directory-history.zsh
 
   # personnal configuration
   zgen load hybris42/zsh hybris.zsh
