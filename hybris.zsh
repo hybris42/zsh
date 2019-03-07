@@ -13,17 +13,19 @@ unsetopt share_history
 keychain -q --agents ssh id_rsa id_dsa
 
 # Everyday aliases
-c-cat()		{for a in $@; do colorize_via_pygmentize $a; done}
-c-less()	{for a in $@; do colorize_via_pygmentize $a | less; done}
-e()		{emacsclient -n $@ > /dev/null 2>&1}
-health()	{/usr/bin/screen -O -S health -c ~/.config/screen_health}
-j()		{if [ $# -eq 0 ]; then marks; else jump $@; fi}
-loop()		{while [ 1 ]; do sh -c "$@"; done}
-open_ports()	{sudo netstat -tulpen 2> /dev/null | grep "LISTEN"}
-r()		{if [ $# -eq 1 ]; then ssh root@$1; else sudo su -; fi}
-dontknow()      {echo -n "¯\\_(ツ)_/¯" | xclip}
-def()           {echo "default_path = '$PWD'" | awesome-client}
-dchroot()       {docker run --rm --privileged -ti $@ debian:stretch /bin/bash}
+c-cat( )         {for a in $@; do colorize_via_pygmentize $a; done}
+c-less()         {for a in $@; do colorize_via_pygmentize $a | less; done}
+e()              {emacsclient -n $@ > /dev/null 2>&1}
+health()	 {/usr/bin/screen -O -S health -c ~/.config/screen_health}
+j()		 {if [ $# -eq 0 ]; then marks; else jump $@; fi}
+loop()		 {while [ 1 ]; do sh -c "$@"; done}
+open_ports()	 {sudo netstat -tulpen 2> /dev/null | grep "LISTEN"}
+r()		 {if [ $# -eq 1 ]; then ssh root@$1; else sudo su -; fi}
+dontknow()       {echo -n "¯\\_(ツ)_/¯" | xclip}
+def()            {echo "default_path = '$PWD'" | awesome-client}
+dchroot()        {docker run --rm --privileged -ti $@ debian:stretch /bin/bash}
+local-history()  {mkdir -p /home/hybris/.directory_history/$PWD; HISTFILE=/home/hybris/.directory_history/$PWD/history}
+global-history() {HISTFILE=/home/hybris/.zsh_history}
 
 # Usefull bindings
 bindkey "^[Od" backward-word
