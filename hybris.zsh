@@ -1,7 +1,7 @@
 # bip at command end
 function precmd() {
   echo -n -e "\a"
-  if [ $_per_directory_history_is_global = false ]; then
+  if [ "$HISTFILE" != "/home/hybris/.zsh_history" ]; then
     echo "\e[31mUsing local history\e[39m"
   fi
 }
