@@ -1,10 +1,5 @@
 # bip at command end
-function precmd() {
-  echo -n -e "\a"
-  if [ "$HISTFILE" != "/home/hybris/.zsh_history" ]; then
-    echo "\e[31mUsing local history\e[39m"
-  fi
-}
+function precmd() {echo -n -e "\a"}
 
 # do not share history between terms...
 unsetopt share_history
@@ -24,8 +19,6 @@ r()		 {if [ $# -eq 1 ]; then ssh root@$1; else sudo su -; fi}
 dontknow()       {echo -n "¯\\_(ツ)_/¯" | xclip}
 def()            {echo "default_path = '$PWD'" | awesome-client}
 dchroot()        {docker run --rm --privileged -ti $@ debian:stretch /bin/bash}
-local-history()  {mkdir -p /home/hybris/.directory_history/$PWD; HISTFILE=/home/hybris/.directory_history/$PWD/history; return 0}
-global-history() {HISTFILE=/home/hybris/.zsh_history; return 0}
 
 # Usefull bindings
 bindkey "^[Od" backward-word
