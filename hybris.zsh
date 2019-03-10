@@ -5,7 +5,7 @@ function precmd() {echo -n -e "\a"}
 unsetopt share_history
 
 # Load keychain
-keychain -q --agents ssh id_rsa id_dsa
+# keychain -q --agents ssh id_rsa id_dsa
 
 # Everyday aliases
 c-cat()          {for a in $@; do colorize_via_pygmentize $a; done}
