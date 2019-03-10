@@ -4,6 +4,11 @@ source "${HOME}/.zgen/zgen.zsh"
 # if the init scipt doesn't exist
 if ! zgen saved; then
 
+  # Some configuration
+  zstyle :omz:plugins:keychain agents ssh
+  zstyle :omz:plugins:keychain identities id_rsa
+  zstyle :omz:plugins:keychain options --quiet
+
   # specify plugins here
   zgen oh-my-zsh
   zgen oh-my-zsh plugins/colored-man-pages
@@ -15,10 +20,6 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/rsync
   zgen oh-my-zsh plugins/systemadmin
   zgen oh-my-zsh plugins/z
-
-  # Some configuration
-  zstyle :omz:plugins:keychain agents ssh
-  zstyle :omz:plugins:keychain options --quiet
 
   # personnal configuration
   zgen load hybris42/zsh hybris.zsh
