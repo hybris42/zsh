@@ -1,13 +1,13 @@
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
 
+# Some configuration
+zstyle :omz:plugins:keychain agents ssh
+zstyle :omz:plugins:keychain identities id_rsa
+zstyle :omz:plugins:keychain options --quiet
+
 # if the init scipt doesn't exist
 if ! zgen saved; then
-
-  # Some configuration
-  zstyle :omz:plugins:keychain agents ssh
-  zstyle :omz:plugins:keychain identities id_rsa
-  zstyle :omz:plugins:keychain options --quiet
 
   # specify plugins here
   zgen oh-my-zsh
