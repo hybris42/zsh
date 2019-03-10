@@ -16,6 +16,10 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/systemadmin
   zgen oh-my-zsh plugins/z
 
+  # Some configuration
+  zstyle :omz:plugins:keychain agents ssh
+  zstyle :omz:plugins:keychain options --quiet
+
   # personnal configuration
   zgen load hybris42/zsh hybris.zsh
   zgen load hybris42/zsh bearstech.zsh
