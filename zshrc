@@ -1,12 +1,19 @@
-# Some configuration
+######################
+# Some configuration #
+######################
+# keychain
 zstyle :omz:plugins:keychain agents ssh
 zstyle :omz:plugins:keychain identities id_rsa
 zstyle :omz:plugins:keychain options --quiet
 
-# load zgen
+#############
+# Load zgen #
+#############
 source "${HOME}/.zgen/zgen.zsh"
 
-# if the init scipt doesn't exist
+#######################################
+# Plugins and configuration generator #
+#######################################
 if ! zgen saved; then
 
   # specify plugins here
