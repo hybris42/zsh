@@ -5,6 +5,7 @@ function precmd() {echo -n -e "\a"}
 unsetopt share_history
 
 # Everyday aliases
+catwhich()       {echo "\e[35mPath: $(which $1)\n\e[39m"; cat $(which $1)}
 cless()          {for a in $@; do ccat $a | less; done}
 e()              {emacsclient -n $@ > /dev/null 2>&1}
 j()		 {if [ $# -eq 0 ]; then marks; else jump $@; fi}
