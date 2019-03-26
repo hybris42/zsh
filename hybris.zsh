@@ -7,13 +7,14 @@ unsetopt share_history
 # Everyday aliases
 catwhich()       {echo "\e[35mPath: $(which $1)\n\e[39m"; cat $(which $1)}
 cless()          {for a in $@; do ccat $a | less; done}
+dchroot()        {docker run --rm --privileged -ti $@ debian:stretch /bin/bash}
+dontknow()       {echo -n "¯\\_(ツ)_/¯" | xclip}
 e()              {emacsclient -n $@ > /dev/null 2>&1}
+fd()             {fdfind $@}
 j()		 {if [ $# -eq 0 ]; then marks; else jump $@; fi}
 loop()		 {while [ 1 ]; do sh -c "$@"; done}
 open_ports()	 {sudo netstat -tulpen 2> /dev/null | grep "LISTEN"}
 r()		 {if [ $# -gt 0 ]; then for h in $@; do ssh root@$h; done; else sudo su -; fi}
-dontknow()       {echo -n "¯\\_(ツ)_/¯" | xclip}
-dchroot()        {docker run --rm --privileged -ti $@ debian:stretch /bin/bash}
 sc-error()       {xdg-open "https://github.com/koalaman/shellcheck/wiki/$1"}
 
 # Usefull bindings
