@@ -10,7 +10,7 @@ cless()          {for a in $@; do ccat $a | less; done}
 dchroot()        {docker run --rm --privileged -ti $@ debian:stretch /bin/bash}
 dontknow()       {echo -n "¯\\_(ツ)_/¯" | xclip}
 e()              {emacsclient -n $@ > /dev/null 2>&1}
-fd()             {fdfind $@}
+fd()             {fdfind -H -I -L $@}
 j()		 {if [ $# -eq 0 ]; then marks; else jump $@; fi}
 loop()		 {while [ 1 ]; do sh -c "$@"; done}
 open_ports()	 {sudo netstat -tulpen 2> /dev/null | grep "LISTEN"}

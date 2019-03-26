@@ -21,7 +21,6 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/colored-man-pages
   zgen oh-my-zsh plugins/colorize
   zgen oh-my-zsh plugins/extract
-  zgen oh-my-zsh plugins/fd
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/jump
   zgen oh-my-zsh plugins/keychain
