@@ -1,5 +1,13 @@
 # bip at command end
-function precmd() {echo -n -e "\a"}
+function precmd() {
+    echo -n -e "\a"
+    main_screen=$(echo "if require('awful.screen').focused().index == 1 then return('main-screen') end" | awesome-client)
+    if [ $main_screen ]; then
+        /home/hybris/.scripts/term-fontsize $(cat ~/.config/term-fontsize_1)
+    else
+        /home/hybris/.scripts/term-fontsize $(cat ~/.config/term-fontsize_2)
+    fi
+}
 
 # do not share history between terms...
 unsetopt share_history
@@ -13,7 +21,7 @@ e()              {emacsclient -n $@ > /dev/null 2>&1}
 fd()             {fdfind -H -I -L $@}
 j()		 {if [ $# -eq 0 ]; then marks; else jump $@; fi}
 loop()		 {while [ 1 ]; do sh -c "$@"; done}
-open_ports()	 {sudo netstat -tulpen 2> /dev/null | grep "LISTEN"}
+open_ports()	 {if [ $# -eq 1 ] && [ $1 = "public" ]; then sudo netstat -tulpen 2> /dev/null | grep "LISTEN" | grep -v "127.0.0.1"; else sudo netstat -tulpen 2> /dev/null | grep "LISTEN"; fi}
 r()		 {if [ $# -gt 0 ]; then for h in $@; do ssh root@$h; done; else sudo su -; fi}
 sc-error()       {xdg-open "https://github.com/koalaman/shellcheck/wiki/$1"}
 
