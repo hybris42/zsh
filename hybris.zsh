@@ -1,23 +1,11 @@
-# resize term font
-term-fontsize() {
-    if [ $# -ne 1 ]; then
-        exit 1
-    else
-        printf '\33]710;%s%d\007' "xft:Source Code Pro:pixelsize=$1:antialias=true"
-        printf '\33]711;%s%d\007' "xft:Source Code Pro:pixelsize=$1:antialias=true"
-        printf '\33]712;%s%d\007' "xft:Source Code Pro:pixelsize=$1:antialias=true"
-        printf '\33]713;%s%d\007' "xft:Source Code Pro:pixelsize=$1:antialias=true"
-    fi
-}
-
 # bip at command end
 function precmd() {
     echo -n -e "\a"
     main_screen=$(echo "if require('awful.screen').focused().index == 1 then return('main-screen') end" | awesome-client)
     if [ $main_screen ]; then
-        term-fontsize $(cat ~/.config/term-fontsize_1)
+        /home/hybris/.scripts/term-fontsize $(cat ~/.config/term-fontsize_1)
     else
-        term-fontsize $(cat ~/.config/term-fontsize_2)
+        /home/hybris/.scripts/term-fontsize $(cat ~/.config/term-fontsize_2)
     fi
 }
 
