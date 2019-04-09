@@ -1,12 +1,7 @@
-# bip at command end
+# bip at command end, resize font
 function precmd() {
     echo -n -e "\a"
-    main_screen=$(echo "if require('awful.screen').focused().index == 1 then return('main-screen') end" | awesome-client)
-    if [ $main_screen ]; then
-        /home/hybris/.scripts/term-fontsize $(cat ~/.config/term-fontsize_1)
-    else
-        /home/hybris/.scripts/term-fontsize $(cat ~/.config/term-fontsize_2)
-    fi
+    /home/hybris/.scripts/term-fontsize
 }
 
 # do not share history between terms...
