@@ -12,6 +12,7 @@ catwhich()       {echo "\e[35mPath: $(which $1)\n\e[39m"; cat $(which $1)}
 cless()          {for a in $@; do ccat $a | less; done}
 dchroot()        {docker run --rm --privileged -ti $@ debian:stretch /bin/bash}
 dontknow()       {echo -n "¯\\_(ツ)_/¯" | xclip}
+dualscreen()     {[ $# -eq 1 ] && xrandr --auto && xrandr --output $1 --primary --output eDP1 --left-of $1}
 e()              {emacsclient -n $@ > /dev/null 2>&1}
 fd()             {fdfind -H -I -L $@}
 j()		 {if [ $# -eq 0 ]; then marks; else jump $@; fi}
