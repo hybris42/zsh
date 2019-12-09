@@ -19,6 +19,7 @@ j()		 {if [ $# -eq 0 ]; then marks; else jump $@; fi}
 loop()		 {while [ 1 ]; do sh -c "$@"; done}
 open_ports()	 {if [ $# -eq 1 ] && [ $1 = "public" ]; then sudo netstat -tulpen 2> /dev/null | grep "LISTEN" | grep -v "127.0.0.1"; else sudo netstat -tulpen 2> /dev/null | grep "LISTEN"; fi}
 r()		 {if [ $# -gt 0 ]; then for h in $@; do ssh root@$h; done; else sudo su -; fi}
+ra()             {if [ $# -gt 0 ]; then for h in $@; do ssh -A root@$h; done; else sudo su -; fi}
 sc-error()       {xdg-open "https://github.com/koalaman/shellcheck/wiki/$1"}
 
 # Usefull bindings
