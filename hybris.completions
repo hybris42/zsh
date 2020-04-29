@@ -1,0 +1,3 @@
+# Some completions
+compctl -K _completemarks    j
+compdef    _path_commands    catwhich

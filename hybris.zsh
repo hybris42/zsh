@@ -40,7 +40,3 @@ export PATH=$HOME/.scripts:$PATH
 export READNULLCMD=${PAGER:-/usr/bin/pager}
 export WATCH=all
 export WATCHFMT="%n has %a %l from %M"
-
-# Some completions
-compctl -K _completemarks    j
-compdef    _path_commands    catwhich
