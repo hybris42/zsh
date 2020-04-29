@@ -1,3 +1,8 @@
+# keychain
+zstyle :omz:plugins:keychain agents gpg,ssh
+zstyle :omz:plugins:keychain identities id_rsa D79CA887
+zstyle :omz:plugins:keychain options --quiet
+
 # bip at command end, resize font
 function precmd() {
     echo -n -e "\a"
