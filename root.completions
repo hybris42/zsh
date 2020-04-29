@@ -1,0 +1,2 @@
+# Some completions
+compctl -K _completemarks    j
