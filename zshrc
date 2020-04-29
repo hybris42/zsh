@@ -9,10 +9,10 @@ source "${HOME}/.zgen/zgen.zsh"
 if ! zgen saved; then
   # Configuration
   zgen load hybris42/zsh ${USER}.zsh
-  # Theme
-  zgen load hybris42/zsh ${USER}.theme
   # Plugins
   zgen load hybris42/zsh ${USER}.plugins
+  # Theme
+  zgen load hybris42/zsh ${USER}.theme
   # Completions
   zgen load hybris42/zsh ${USER}.completions
 
