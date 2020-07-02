@@ -20,6 +20,7 @@ dontknow()       {echo -n "¯\\_(ツ)_/¯" | xclip}
 dualscreen()     {[ $# -eq 1 ] && xrandr --auto && xrandr --output $1 --primary --output eDP1 --left-of $1}
 e()              {emacsclient -n $@ > /dev/null 2>&1}
 fd()             {fdfind -H -I -L $@}
+ips()            {i=0; while [ $i -lt 10 ]; do curl -s ipinfo.io | jq '.ip'; i=$(($i + 1)); done | sort | uniq -c}
 j()		 {if [ $# -eq 0 ]; then marks; else jump $@; fi}
 loop()		 {while [ 1 ]; do sh -c "$@"; done}
 open_ports()	 {if [ $# -eq 1 ] && [ $1 = "public" ]; then sudo netstat -tulpen 2> /dev/null | grep "LISTEN" | grep -v "127.0.0.1"; else sudo netstat -tulpen 2> /dev/null | grep "LISTEN"; fi}
