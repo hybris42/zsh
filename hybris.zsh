@@ -6,7 +6,7 @@ zstyle :omz:plugins:keychain options --quiet
 # bip at command end, resize font
 function precmd() {
     echo -n -e "\a"
-    [ -n "${DISPLAY}" ] && /home/hybris/.scripts/term-fontsize
+#    [ -n "${DISPLAY}" ] && /home/hybris/.scripts/term-fontsize
 }
 
 # do not share history between terms...
