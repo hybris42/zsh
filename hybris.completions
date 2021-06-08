@@ -1,3 +1,6 @@
 # Some completions
 compctl -K _completemarks    j
 compdef    _path_commands    catwhich
+
+_complete_tramp()     {reply=($(ls $INFRA/host && grep "^    [^ ]" ~/dev/robespierre/infra/hosts/all.yml | sed 's/^ *\(.*\):$/\1/'))}
+compctl -K _complete_tramp    tramp

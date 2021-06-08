@@ -19,6 +19,7 @@ dchroot()        {docker run --rm --privileged -ti $@ debian:stretch /bin/bash}
 dontknow()       {echo -n "¯\\_(ツ)_/¯" | xclip}
 dualscreen()     {[ $# -eq 1 ] && xrandr --auto && xrandr --output $1 --primary --output eDP1 --left-of $1}
 e()              {emacsclient -n $@ > /dev/null 2>&1}
+tramp()          {emacsclient -n $(for x in $@; do echo /root@$x:README; done) > /dev/null 2>&1}
 fd()             {fdfind -H -I -L $@}
 ips()            {i=0; while [ $i -lt 10 ]; do curl -s ipinfo.io | jq '.ip'; i=$(($i + 1)); done | sort | uniq -c}
 j()		 {if [ $# -eq 0 ]; then marks; else jump $@; fi}
